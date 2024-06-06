@@ -16,19 +16,18 @@ const wrapperModifiers = {
 
   hideOnMobile: () => css`
     ${media.lessThan('medium')`
-    /* screen width is less than 768px (medium) */
-    width: 5.9rem;
-    height: 4.5rem;
+      width: 5.8rem;
+      height: 4.5rem;
 
-    svg: {
+      svg {
         height: 4.5rem;
         pointer-events: none;
-    }
+      }
 
-    .text {
+      .text {
         display: none;
-    }
-  `}
+      }
+    `}
   `
 }
 
