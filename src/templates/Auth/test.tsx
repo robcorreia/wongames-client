@@ -4,8 +4,12 @@ import Auth from '.'
 import { renderWithTheme } from '../../utils/tests/helpers'
 
 describe('<Auth />', () => {
-  it('should render logos, title, children', () => {
-    renderWithTheme(<Auth title="Auth title">Children</Auth>)
+  it('should render all components and children', () => {
+    renderWithTheme(
+      <Auth title="Auth title">
+        <input type="text" />
+      </Auth>
+    )
 
     expect(screen.getAllByRole('img', { name: /won games/i })).toHaveLength(2)
     expect(
@@ -16,6 +20,6 @@ describe('<Auth />', () => {
     expect(
       screen.getByRole('heading', { name: /auth title/i })
     ).toBeInTheDocument()
-    expect(screen.getByText(/children/i)).toBeInTheDocument()
+    expect(screen.getByRole('textbox')).toBeInTheDocument()
   })
 })
